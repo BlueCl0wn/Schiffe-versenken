@@ -24,15 +24,13 @@ class player():
         else:
             return false
 
-    def choosePos(self, turn):
-        if not turn:
-            print("We=here do you want to attack? (i.e.: (A, 5)) ")
-            position = input
-            turn = 1
-        else:
-            posX = random.choice(ABC)
-            posY = random.randint(0, 7)
-            position = (posX, posY)
-            turn = 0
-            
+    def getPosOne(self):
+        print("We=here do you want to attack? (i.e.: (A, 5)) ")
+        position = input
+        return position
+
+    def getPosTwo(self):
+        posX = random.choice(ABC)
+        posY = random.randint(0, 7)
+        position = (posX, posY)
         return position
