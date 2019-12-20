@@ -1,6 +1,6 @@
 from PlayerClass import player
 
-onwOwn =   [[1, 1, 0, 0, 0, 0, 0, 0],
+oneOwn =   [[1, 1, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 1, 0, 1, 1, 1],
             [0, 0, 0, 1, 0, 0, 0, 0,],
             [0, 0, 0, 1, 0, 0, 0, 0],
@@ -23,4 +23,4 @@ two = player(own = twoOwn)
 
 turn = 0
 
-ABC = [A, B, C, E, F, G, H]
+ABC = ["A", "B", "C", "E", "F", "G", "H"]

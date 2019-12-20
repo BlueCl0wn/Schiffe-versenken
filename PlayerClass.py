@@ -1,36 +1,43 @@
 import random
 
+position = (random.randint(0, 7), random.randint(0, 7))
+
 class player():
-    def __main__(self, own):
+    def __init__(self, own):
         self.size = 10
         self.ships = [(2, 1), (3, 1), (4, 1), (5,1), (5,2)]
-
         self.own = own
 
-        self.other =   [[none, none, none, none, none, none, none, none, none, none],
-                        [none, none, none, none, none, none, none, none, none, none],
-                        [none, none, none, none, none, none, none, none, none, none],
-                        [none, none, none, none, none, none, none, none, none, none],
-                        [none, none, none, none, none, none, none, none, none, none],
-                        [none, none, none, none, none, none, none, none, none, none],
-                        [none, none, none, none, none, none, none, none, none, none],
-                        [none, none, none, none, none, none, none, none, none, none],
-                        [none, none, none, none, none, none, none, none, none, none],
-                        [none, none, none, none, none, none, none, none, none, none]]
+        self.enemyAttacks = []
+
+        self.other =   [[None, None, None, None, None, None, None, None],
+                        [None, None, None, None, None, None, None, None],
+                        [None, None, None, None, None, None, None, None],
+                        [None, None, None, None, None, None, None, None],
+                        [None, None, None, None, None, None, None, None],
+                        [None, None, None, None, None, None, None, None],
+                        [None, None, None, None, None, None, None, None],
+                        [None, None, None, None, None, None, None, None]]
 
     def check(self, pos):
-        if own[pos[0]][pos[1]]:
-            return true
+        if self.own[int(pos[0])][int(pos[1])]:
+            return True
         else:
-            return false
+            return False
 
     def getPosOne(self):
-        print("We=here do you want to attack? (i.e.: (A, 5)) ")
-        position = input
+        print("Wehere do you want to attack? (i.e.: (1, 5)) ")
+        position = input()
+        while int(position[0]) > 7 or int(position[1]) > 7:
+            print("Index out of bounce. Highest possible index is 7. ")
+            position = input()
         return position
 
     def getPosTwo(self):
-        posX = random.choice(ABC)
-        posY = random.randint(0, 7)
-        position = (posX, posY)
+        global position
+        while position in self.enemyAttacks:
+            posX = random.randint(0, 7)
+            posY = random.randint(0, 7)
+            position = (posX, posY)
+        self.enemyAttacks.insert(-1, position)
         return position
