@@ -26,7 +26,7 @@ class player():
             return False
 
     def getPosOne(self):
-        print("Wehere do you want to attack? (i.e.: (1, 5)) ")
+        print("Where do you want to attack? (i.e.: (1, 5)) ")
         position = input()
         while int(position[0]) > 7 or int(position[1]) > 7:
             print("Index out of bounce. Highest possible index is 7. ")
